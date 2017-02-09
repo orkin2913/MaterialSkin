@@ -60,6 +60,12 @@ namespace MaterialSkin.Controls
             Padding = new Padding(0);
         }
 
+        public sealed override bool AutoSize
+        {
+            get { return base.AutoSize; }
+            set { base.AutoSize = value; }
+        }
+
         public override string Text
         {
             get { return base.Text; }

@@ -22,7 +22,7 @@ namespace MaterialSkin.Controls
 
         public override string Text { get { return _baseTextBox.Text; } set { _baseTextBox.Text = value; } }
         public new object Tag { get { return _baseTextBox.Tag; } set { _baseTextBox.Tag = value; } }
-        public new int MaxLength { get { return _baseTextBox.MaxLength; } set { _baseTextBox.MaxLength = value; } }
+        public int MaxLength { get { return _baseTextBox.MaxLength; } set { _baseTextBox.MaxLength = value; } }
 
         public string SelectedText { get { return _baseTextBox.SelectedText; } set { _baseTextBox.SelectedText = value; } }
         public string Hint { get { return _baseTextBox.Hint; } set { _baseTextBox.Hint = value; } }
@@ -36,7 +36,7 @@ namespace MaterialSkin.Controls
 
         public void SelectAll() { _baseTextBox.SelectAll(); }
         public void Clear() { _baseTextBox.Clear(); }
-        public void Focus() { _baseTextBox.Focus(); }
+        public new void Focus() { _baseTextBox.Focus(); }
 
 
         # region Forwarding events to baseTextBox
@@ -1027,7 +1027,7 @@ namespace MaterialSkin.Controls
             _baseTextBox.ForeColor = SkinManager.GetPrimaryTextColor();
         }
 
-        private class BaseTextBox : TextBox
+        private sealed class BaseTextBox : TextBox
         {
             [DllImport("user32.dll", CharSet = CharSet.Auto)]
             private static extern IntPtr SendMessage(IntPtr hWnd, int msg, int wParam, string lParam);
@@ -1137,15 +1137,13 @@ namespace MaterialSkin.Controls
             private void ContextMenuStripOnOpening(object sender, CancelEventArgs cancelEventArgs)
             {
                 var strip = sender as TextBoxContextMenuStrip;
-                if (strip != null)
-                {
-                    strip.Undo.Enabled = CanUndo;
-                    strip.Cut.Enabled = !string.IsNullOrEmpty(SelectedText);
-                    strip.Copy.Enabled = !string.IsNullOrEmpty(SelectedText);
-                    strip.Paste.Enabled = Clipboard.ContainsText();
-                    strip.Delete.Enabled = !string.IsNullOrEmpty(SelectedText);
-                    strip.SelectAll.Enabled = !string.IsNullOrEmpty(Text);
-                }
+                if (strip == null) return;
+                strip.Undo.Enabled = CanUndo;
+                strip.Cut.Enabled = !string.IsNullOrEmpty(SelectedText);
+                strip.Copy.Enabled = !string.IsNullOrEmpty(SelectedText);
+                strip.Paste.Enabled = Clipboard.ContainsText();
+                strip.Delete.Enabled = !string.IsNullOrEmpty(SelectedText);
+                strip.SelectAll.Enabled = !string.IsNullOrEmpty(Text);
             }
         }
 

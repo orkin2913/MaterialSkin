@@ -84,7 +84,14 @@ namespace MaterialSkin
         private static readonly Brush RAISED_BUTTON_TEXT_LIGHT_BRUSH = new SolidBrush(RAISED_BUTTON_TEXT_LIGHT);
         private static readonly Color RAISED_BUTTON_TEXT_DARK = PRIMARY_TEXT_BLACK;
         private static readonly Brush RAISED_BUTTON_TEXT_DARK_BRUSH = new SolidBrush(RAISED_BUTTON_TEXT_DARK);
+        //Disabled raised button
+        private static readonly Color RAISED_BUTTON_DISABLEDTEXT_LIGHT = Color.FromArgb(26.PercentageToColorComponent(), 0x000000.ToColor());
+        private static readonly Brush RAISED_BUTTON_DISABLEDTEXT_LIGHT_BRUSH = new SolidBrush(RAISED_BUTTON_DISABLEDTEXT_LIGHT);
+        private static readonly Brush RAISED_BUTTON_DISABLEDBACKGROUND_LIGHT_BRUSH = new SolidBrush(Color.FromArgb(12.PercentageToColorComponent(), 0x000000.ToColor()));
 
+        private static readonly Color RAISED_BUTTON_DISABLEDTEXT_DARK = Color.FromArgb(30.PercentageToColorComponent(), 0xFFFFFF.ToColor());
+        private static readonly Brush RAISED_BUTTON_DISABLEDTEXT_DARK_BRUSH = new SolidBrush(RAISED_BUTTON_DISABLEDTEXT_DARK);
+        private static readonly Brush RAISED_BUTTON_DISABLEDBACKGROUND_DARK_BRUSH = new SolidBrush(Color.FromArgb(12.PercentageToColorComponent(), 0xFFFFFF.ToColor()));
         //Flat button
         private static readonly Color FLAT_BUTTON_BACKGROUND_HOVER_LIGHT = Color.FromArgb(20.PercentageToColorComponent(), 0x999999.ToColor());
         private static readonly Brush FLAT_BUTTON_BACKGROUND_HOVER_LIGHT_BRUSH = new SolidBrush(FLAT_BUTTON_BACKGROUND_HOVER_LIGHT);
@@ -190,6 +197,15 @@ namespace MaterialSkin
             return primary ? RAISED_BUTTON_TEXT_LIGHT_BRUSH : RAISED_BUTTON_TEXT_DARK_BRUSH;
         }
 
+        public Brush GetRaisedButtonTextDisabledBrush()
+        {
+            return Theme == Themes.LIGHT ? RAISED_BUTTON_DISABLEDTEXT_LIGHT_BRUSH : RAISED_BUTTON_DISABLEDTEXT_DARK_BRUSH;
+        }
+
+        public Brush GetRaisedButtonBackgroundDisabledBrush()
+        {
+            return Theme == Themes.LIGHT ? RAISED_BUTTON_DISABLEDBACKGROUND_LIGHT_BRUSH : RAISED_BUTTON_DISABLEDBACKGROUND_DARK_BRUSH;
+        }
         public Color GetFlatButtonHoverBackgroundColor()
         {
             return Theme == Themes.LIGHT ? FLAT_BUTTON_BACKGROUND_HOVER_LIGHT : FLAT_BUTTON_BACKGROUND_HOVER_DARK;

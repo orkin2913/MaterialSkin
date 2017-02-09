@@ -50,6 +50,12 @@ namespace MaterialSkin.Controls
             AutoSize = true;
         }
 
+        public sealed override bool AutoSize
+        {
+            get { return base.AutoSize; }
+            set { base.AutoSize = value; }
+        }
+
         public override string Text
         {
             get { return base.Text; }
@@ -84,7 +90,7 @@ namespace MaterialSkin.Controls
                 ClientRectangle.Height - 1,
                 1f))
             {
-                g.FillPath(Primary ? SkinManager.ColorScheme.PrimaryBrush : SkinManager.GetRaisedButtonBackgroundBrush(), backgroundPath);
+                g.FillPath(Enabled ? (Primary ? SkinManager.ColorScheme.PrimaryBrush : SkinManager.GetRaisedButtonBackgroundBrush()) : SkinManager.GetRaisedButtonBackgroundDisabledBrush(), backgroundPath);
             }
 
             if (_animationManager.IsAnimating())
@@ -133,7 +139,7 @@ namespace MaterialSkin.Controls
             g.DrawString(
                 Text.ToUpper(),
                 SkinManager.ROBOTO_MEDIUM_10,
-                SkinManager.GetRaisedButtonTextBrush(Primary),
+                Enabled ? SkinManager.GetRaisedButtonTextBrush(Primary) : SkinManager.GetRaisedButtonTextDisabledBrush(),
                 textRect,
                 new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center });
         }
