@@ -16,8 +16,6 @@ namespace MaterialSkin.Controls
         [Browsable(false)]
         public MouseState MouseState { get; set; }
 
-        public int TextPadding { get; set; }
-
         public MaterialToolTip()
         {
             IsBalloon = false;
