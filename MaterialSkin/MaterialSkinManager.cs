@@ -127,9 +127,18 @@ namespace MaterialSkin
         public readonly Color ACTION_BAR_TEXT_SECONDARY = Color.FromArgb(153, 255, 255, 255);
         public readonly Brush ACTION_BAR_TEXT_SECONDARY_BRUSH = new SolidBrush(Color.FromArgb(153, 255, 255, 255));
 
+        //Material Tool Tip
+        public static readonly Color TOOLTIP_BACKGROUND = Color.FromArgb(90.PercentageToColorComponent(), 0x616161.ToColor());
+        public readonly Brush TOOLTIP_BACKGROUND_BRUSH = new SolidBrush(TOOLTIP_BACKGROUND);
+
         public Color GetPrimaryTextColor()
         {
             return Theme == Themes.LIGHT ? PRIMARY_TEXT_BLACK : PRIMARY_TEXT_WHITE;
+        }
+
+        public Brush GetPrimaryWhiteBrush()
+        {
+            return PRIMARY_TEXT_WHITE_BRUSH;
         }
 
         public Brush GetPrimaryTextBrush()
@@ -239,6 +248,11 @@ namespace MaterialSkin
         public Color GetApplicationBackgroundColor()
         {
             return Theme == Themes.LIGHT ? BACKGROUND_LIGHT : BACKGROUND_DARK;
+        }
+
+        public Color GetToolTipBackgroundColor()
+        {
+            return TOOLTIP_BACKGROUND;
         }
 
         //Roboto font
