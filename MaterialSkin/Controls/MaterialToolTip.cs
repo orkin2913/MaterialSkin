@@ -34,6 +34,17 @@ namespace MaterialSkin.Controls
             SetToolTip(control, null);
         }
 
+         private void PopupEvent(object sender, PopupEventArgs e)
+        {
+            // measure new tooltip size
+            using (Graphics g = Graphics.FromHwnd(e.AssociatedWindow.Handle))
+            using (StringFormat sf = new StringFormat(StringFormatFlags.NoWrap) { LineAlignment = StringAlignment.Center, Alignment = StringAlignment.Center })
+            {
+                SizeF gMeasureSize = g.MeasureString(GetToolTip(e.AssociatedControl), SkinManager.ROBOTO_MEDIUM_10, new SizeF(), sf);
+                Size gNewSize = Size.Ceiling(gMeasureSize);
+                e.ToolTipSize = new Size(gNewSize.Width + 8, gNewSize.Height + 6);
+            }
+        }
         private void DrawToolTipEvent(object sender, DrawToolTipEventArgs e)
         {
             Graphics g = e.Graphics;
@@ -46,18 +57,6 @@ namespace MaterialSkin.Controls
             using (StringFormat sf = new StringFormat(StringFormatFlags.NoWrap) { LineAlignment = StringAlignment.Center, Alignment = StringAlignment.Center })
                 g.DrawString(e.ToolTipText, SkinManager.ROBOTO_MEDIUM_10, SkinManager.GetPrimaryWhiteBrush(), e.Bounds, sf);
 
-        }
-
-        private void PopupEvent(object sender, PopupEventArgs e)
-        {
-            // measure new tooltip size
-            using (Graphics g = Graphics.FromHwnd(e.AssociatedWindow.Handle))
-            using (StringFormat sf = new StringFormat(StringFormatFlags.NoWrap) { LineAlignment = StringAlignment.Center, Alignment = StringAlignment.Center })
-            {
-                SizeF gMeasureSize = g.MeasureString(GetToolTip(e.AssociatedControl), SkinManager.ROBOTO_MEDIUM_10, new SizeF(), sf);
-                Size gNewSize = Size.Ceiling(gMeasureSize);
-                e.ToolTipSize = new Size(gNewSize.Width + 8, gNewSize.Height + 6);
-            }
         }
     }
 }
