@@ -12,23 +12,23 @@ Theming .NET WinForms, C# or VB.Net, to Google's Material Design Principles.
 ---
 
 #### Current state of the MaterialSkin components
- | Supported | Dark & light version | Disabled mode | Animated
---- | --- | --- | --- | ---
-Checkbox | Yes | Yes | Yes | Yes 
-Divider | Yes | Yes | N/A | N/A 
-Flat Button | Yes | Yes | Yes | Yes 
-Label | Yes | Yes | N/A | N/A
-Radio Button | Yes | Yes | Yes | Yes
-Raised Button | Yes | Yes | Yes | Yes 
-Single-line text field | Yes | Yes | No | Yes
-TabControl | Yes | N/A | N/A | Yes
-ContextMenuStrip | Yes | Yes | Yes | Yes
-ListView | Yes | Yes | No | No
-ProgressBar | Yes | Yes | No | No 
-FloatingActionButton | No | No | No | No
-Dialogs | No | No | No | No
-Switch | No | No | No | No
-More... | No | No | No | No
+| Component | Supported | Dark & light version | Disabled mode | Animated |
+| --- | --- | --- | --- | --- |
+| Checkbox | Yes | Yes | Yes | Yes |
+| Divider | Yes | Yes | N/A | N/A |
+| Flat Button | Yes | Yes | Yes | Yes |
+| Label | Yes | Yes | N/A | N/A |
+| Radio Button | Yes | Yes | Yes | Yes |
+| Raised Button | Yes | Yes | Yes | Yes |
+| Single-line text field | Yes | Yes | No | Yes |
+| TabControl | Yes | N/A | N/A | Yes |
+| ContextMenuStrip | Yes | Yes | Yes | Yes |
+| ListView | Yes | Yes | No | No |
+| ProgressBar | Yes | Yes | No | No |
+| FloatingActionButton | No | No | No | No |
+| Dialogs | No | No | No | No |
+| Switch | No | No | No | No |
+| More... | No | No | No | No |
 
 ---
 
