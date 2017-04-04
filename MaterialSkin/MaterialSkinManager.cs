@@ -84,7 +84,14 @@ namespace MaterialSkin
         private static readonly Brush RAISED_BUTTON_TEXT_LIGHT_BRUSH = new SolidBrush(RAISED_BUTTON_TEXT_LIGHT);
         private static readonly Color RAISED_BUTTON_TEXT_DARK = PRIMARY_TEXT_BLACK;
         private static readonly Brush RAISED_BUTTON_TEXT_DARK_BRUSH = new SolidBrush(RAISED_BUTTON_TEXT_DARK);
+        //Disabled raised button
+        private static readonly Color RAISED_BUTTON_DISABLEDTEXT_LIGHT = Color.FromArgb(26.PercentageToColorComponent(), 0x000000.ToColor());
+        private static readonly Brush RAISED_BUTTON_DISABLEDTEXT_LIGHT_BRUSH = new SolidBrush(RAISED_BUTTON_DISABLEDTEXT_LIGHT);
+        private static readonly Brush RAISED_BUTTON_DISABLEDBACKGROUND_LIGHT_BRUSH = new SolidBrush(Color.FromArgb(12.PercentageToColorComponent(), 0x000000.ToColor()));
 
+        private static readonly Color RAISED_BUTTON_DISABLEDTEXT_DARK = Color.FromArgb(30.PercentageToColorComponent(), 0xFFFFFF.ToColor());
+        private static readonly Brush RAISED_BUTTON_DISABLEDTEXT_DARK_BRUSH = new SolidBrush(RAISED_BUTTON_DISABLEDTEXT_DARK);
+        private static readonly Brush RAISED_BUTTON_DISABLEDBACKGROUND_DARK_BRUSH = new SolidBrush(Color.FromArgb(12.PercentageToColorComponent(), 0xFFFFFF.ToColor()));
         //Flat button
         private static readonly Color FLAT_BUTTON_BACKGROUND_HOVER_LIGHT = Color.FromArgb(20.PercentageToColorComponent(), 0x999999.ToColor());
         private static readonly Brush FLAT_BUTTON_BACKGROUND_HOVER_LIGHT_BRUSH = new SolidBrush(FLAT_BUTTON_BACKGROUND_HOVER_LIGHT);
@@ -120,9 +127,18 @@ namespace MaterialSkin
         public readonly Color ACTION_BAR_TEXT_SECONDARY = Color.FromArgb(153, 255, 255, 255);
         public readonly Brush ACTION_BAR_TEXT_SECONDARY_BRUSH = new SolidBrush(Color.FromArgb(153, 255, 255, 255));
 
+        //Material Tool Tip
+        public static readonly Color TOOLTIP_BACKGROUND = Color.FromArgb(90.PercentageToColorComponent(), 0x616161.ToColor());
+        public readonly Brush TOOLTIP_BACKGROUND_BRUSH = new SolidBrush(TOOLTIP_BACKGROUND);
+
         public Color GetPrimaryTextColor()
         {
             return Theme == Themes.LIGHT ? PRIMARY_TEXT_BLACK : PRIMARY_TEXT_WHITE;
+        }
+
+        public Brush GetPrimaryWhiteBrush()
+        {
+            return PRIMARY_TEXT_WHITE_BRUSH;
         }
 
         public Brush GetPrimaryTextBrush()
@@ -190,6 +206,15 @@ namespace MaterialSkin
             return primary ? RAISED_BUTTON_TEXT_LIGHT_BRUSH : RAISED_BUTTON_TEXT_DARK_BRUSH;
         }
 
+        public Brush GetRaisedButtonTextDisabledBrush()
+        {
+            return Theme == Themes.LIGHT ? RAISED_BUTTON_DISABLEDTEXT_LIGHT_BRUSH : RAISED_BUTTON_DISABLEDTEXT_DARK_BRUSH;
+        }
+
+        public Brush GetRaisedButtonBackgroundDisabledBrush()
+        {
+            return Theme == Themes.LIGHT ? RAISED_BUTTON_DISABLEDBACKGROUND_LIGHT_BRUSH : RAISED_BUTTON_DISABLEDBACKGROUND_DARK_BRUSH;
+        }
         public Color GetFlatButtonHoverBackgroundColor()
         {
             return Theme == Themes.LIGHT ? FLAT_BUTTON_BACKGROUND_HOVER_LIGHT : FLAT_BUTTON_BACKGROUND_HOVER_DARK;
@@ -223,6 +248,11 @@ namespace MaterialSkin
         public Color GetApplicationBackgroundColor()
         {
             return Theme == Themes.LIGHT ? BACKGROUND_LIGHT : BACKGROUND_DARK;
+        }
+
+        public Color GetToolTipBackgroundColor()
+        {
+            return TOOLTIP_BACKGROUND;
         }
 
         //Roboto font

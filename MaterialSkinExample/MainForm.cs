@@ -20,6 +20,7 @@ namespace MaterialSkinExample
 
 			// Add dummy data to the listview
 	        seedListView();
+            materialToolTip1.SetToolTip(materialButton1, "Test Tooltip dddddddddddddddddddddddd ffffffffffffffffff");
         }
 
 	    private void seedListView()

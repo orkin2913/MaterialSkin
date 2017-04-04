@@ -32,17 +32,15 @@ Theming .NET WinForms, C# or VB.Net, to Google's Material Design Principles.
 
 ---
 
-#### Implementing MaterialSkin in your application
+#### Implementing MaterialSkin in your application. Updated for this fork!
 
 **1. Add the library to your project**
 
-  You can do this on multiple ways. The easiest way would be adding the [NuGet Package](https://www.nuget.org/packages/MaterialSkin/). Right click on your project and click 'Manage NuGet Packages...'. Search for 'MaterialSkin' and click on install. Once installed the library will be included in your project references. (Or install it through the package manager console: PM> Install-Package MaterialSkin)
-
-Another way of doing this step would be cloning the project from GitHub, compiling the library yourself and adding it as a reference.
+  Clone the project from GitHub, compile the library and add it as a reference.
   
 **2. Add the MaterialSkin components to your ToolBox**
 
-  If you have installed the NuGet package, the MaterialSkin.dll file should be in the folder //bin/Debug. Simply drag the MaterialSkin.dll file into your IDE's ToolBox and all the controls should be added there.
+  Once you compile the project, the MaterialSkin.dll file should be in the folder //bin/Debug. Simply drag the MaterialSkin.dll file into your IDE's ToolBox and all the controls should be added there.
   
 **3. Inherit from MaterialForm**
 
@@ -99,9 +97,7 @@ If you love .NET and Material Design, you should definitely check out [Material 
 
 ---
 
-#### Contact
-
-If you wish to contact me for anything you can get in touch at:
+#### Contact original creator of this library
 
 - Twitter: https://twitter.com/Ignace_Maes
 - Personal Website: http://ignacemaes.com
